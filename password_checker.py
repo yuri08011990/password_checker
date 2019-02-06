@@ -1,4 +1,4 @@
-data = input('Enter password: ')
+data = input('Enter your password: ')
 
 def checker(data):
     
@@ -27,38 +27,48 @@ def checker(data):
             lowercase += 1
             if lowercase >= 1:
                 has_lowercase = True
+
+
+    #Phrases
+    pass_cont  = 'The password contains'
+    meet_req   = 'meets the requirements.'
+    d_meet_req = 'does not meet the requirements.'
+    secure     = 'Your password is secure.'
+    n_secure   = 'Your password is not secure.'
     
         
-    if is_long_enough == True:
-        print ('The password contains', len(data), 'characters which meets the requirements.')
+    if is_long_enough == True and len(data) > 1:
+        print ('{} {} characters which {}'.format(pass_cont, len(data), meet_req))
+    elif len(data) == 1:
+        print('{} {} character which {}'.format(pass_cont, len(data), d_meet_req))
     else:
-        print ('The password contains', len(data), 'characters which does not meet the requirements.')
+        print ('{} {} characters which {}'.format(pass_cont, len(data), d_meet_req))
     
     if has_number == True and number > 1:
-        print ('The password contains', number, 'numbers which meets the requirements.')
+        print ('{} {} numbers which {}'.format(pass_cont, number, meet_req))
     elif has_number == True and number == 1:
-        print ('The password contains', number, 'number which meets the requirements.')
+        print ('{} {} number which {}'.format(pass_cont, number, meet_req))
     else:
-        print ('The password contains', number, 'numbers which does not meet the requirements.')
+        print ('{} {} numbers which {}'.format(pass_cont, number, d_meet_req))
     
     if has_uppercase == True and uppercase > 1:
-        print ('The password contains', uppercase, 'uppercase letters which meets the requirements.')
+        print ('{} {} uppercase characters which {}'.format(pass_cont, uppercase, meet_req))
     elif has_uppercase == True and uppercase == 1:
-        print ('The password contains', uppercase, 'uppercase letter which meets the requirements.')
+        print ('{} {} uppercase character which {}'.format(pass_cont, uppercase, meet_req))
     else:
-        print ('The password contains', uppercase, 'uppercase letters which does not meet the requirements.')
+        print ('{} {} uppercase characters which {}'.format(pass_cont, uppercase, d_meet_req))
     
     if has_lowercase == True and lowercase > 1:
-        print ('The password contains', lowercase, 'lowercase letters which meets the requirements.')
+        print ('{} {} lowercase characters which {}'.format(pass_cont, lowercase, meet_req))
     elif has_lowercase == True and lowercase == 1:
-        print ('The password contains', lowercase, 'lowercase letter which meets the requirements.')
+        print ('{} {} lowercase character which {}'.format(pass_cont, lowercase, meet_req))
     else:
-        print ('The password contains', lowercase, 'lowercase letters which does not meet the requirements.')
+        print ('{} {} lowercase characters which {}'.format(pass_cont, lowercase, d_meet_req))
 
     if is_long_enough and has_number and has_uppercase and has_lowercase == True:
-        print ('Your password is secure.')
+        print (secure)
     else:
-        print ('Your password is not secure.')
+        print (n_secure)
 
 
 checker(data)
